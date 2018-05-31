@@ -5,7 +5,13 @@ using cakeslice;
 
 public class PawnController : MonoBehaviour {
 
+    public PawnData PawnProperty;
 
+    [Header ("Proprietà Pedina")]
+    public bool isCircle;
+    public bool isFilled;
+    public bool isSmall;
+    public bool isWhite;
 
     public bool isPawnInGame;
 
@@ -15,6 +21,7 @@ public class PawnController : MonoBehaviour {
 
 	void Start () {
         childOutline = GetComponentInChildren<Outline>();
+        Setup();
 	}
 	
 	void Update () {
@@ -45,6 +52,13 @@ public class PawnController : MonoBehaviour {
         {
             childOutline.eraseRenderer = true;
         }
+    }
+
+    private void Setup() {
+        isCircle = PawnProperty.isCircle;
+        isFilled = PawnProperty.isFilled;
+        isSmall = PawnProperty.isSmall;
+        isWhite = PawnProperty.isWhite;
     }
 
     #region API

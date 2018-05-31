@@ -1,0 +1,17 @@
+Circle1_Small1 = Rotonda_Accesa_Bassa_Azzurra;
+Circle1_Small2 = Rotonda_Accesa_Bassa_Rosa;
+Circle2_Small1 = Rotonda_Spenta_Bassa_Azzurra;
+Circle2_Small2 = Rotonda_Spenta_Bassa_Rosa;
+Circle1_Tall1  = Rotonda_Accesa_Alta_Azzurra;
+Circle1_Tall2  = Rotonda_Accesa_Alta_Rosa;
+Circle2_Tall1  = Rotonda_Spenta_Alta_Azzurra;
+Circle2_Tall2  = Rotonda_Spenta_Alta_Rosa;
+
+Quad1_Small1   = Quadrata_Accesa_Bassa_Azzurra;
+Quad1_Small2   = Quadrata_Accesa_Bassa_Rosa;
+Quad2_Small1   = Quadrata_Spenta_Bassa_Azzurra;
+Quad2_Small2   = Quadrata_Spenta_Bassa_Rosa;
+Quad1_Tall1    = Quadrata_Accesa_Alta_Azzurra;
+Quad1_Tall2    = Quadrata_Accesa_Alta_Rosa;
+Quad2_Tall1    = Quadrata_Spenta_Alta_Azzurra;
+Quad2_Tall2    = Quadrata_Spenta_Alta_Rosa;

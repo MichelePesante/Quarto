@@ -9,6 +9,9 @@ public class CellController : MonoBehaviour {
 
     private Outline childOutline;
 
+    [SerializeField]
+    public CellCoordinates cellCoordinate;
+
     void Start()
     {
         childOutline = GetComponentInChildren<Outline>();
