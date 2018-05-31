@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5d795b2be666c524db55953f873d3bd7
-timeCreated: 1527765681
+guid: 719a5092197f6564cbd134f65769b86d
+timeCreated: 1527767616
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,7 +10,7 @@ ModelImporter:
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Quad2_Tall
+    4300000: Quad1_Small
     9500000: //RootNode
   externalObjects: {}
   materials:

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 574baafa7eafad048b6f529e1173f90c
-timeCreated: 1527765681
+guid: 7659513e6f0760344a680cbd7c5e0f13
+timeCreated: 1527767617
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,7 +10,7 @@ ModelImporter:
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Circle1_Tall
+    4300000: Quad2_Tall
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -42,7 +42,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 30
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
