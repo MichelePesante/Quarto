@@ -19,6 +19,8 @@ public class PawnController : MonoBehaviour {
 
     public bool isNowSelected;
 
+    public bool isPawnVictory;
+
     private Outline childOutline;
 
 	void Start () {
