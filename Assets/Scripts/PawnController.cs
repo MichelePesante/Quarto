@@ -7,6 +7,8 @@ public class PawnController : MonoBehaviour {
 
     public PawnData PawnProperty;
 
+    public CellCoordinates PawnCoordinates;
+
     [Header ("Proprietà Pedina")]
     public bool isCircle;
     public bool isFilled;
@@ -77,6 +79,7 @@ public class PawnController : MonoBehaviour {
 
     public void PlacePawn(CellController cellToPlaceOn) {
         transform.position = cellToPlaceOn.transform.position;
+        PawnCoordinates = cellToPlaceOn.cellCoordinate;
     }
 
     public void ResetPawnController()

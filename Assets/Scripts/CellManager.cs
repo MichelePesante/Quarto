@@ -31,6 +31,7 @@ public class CellManager : MonoBehaviour {
 }
 
 public enum CellCoordinates {
+    X_Y,
     X0_Y0, X1_Y0, X2_Y0, X3_Y0,
     X0_Y1, X1_Y1, X2_Y1, X3_Y1,
     X0_Y2, X1_Y2, X2_Y2, X3_Y2,
