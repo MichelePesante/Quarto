@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using cakeslice;
 
-public class PawnController : MonoBehaviour { 
+public class PawnController : MonoBehaviour {
+
+    public bool isPawnInGame;
+
+    public bool isNowSelected;
 
     private Outline childOutline;
 
@@ -17,7 +21,7 @@ public class PawnController : MonoBehaviour {
 
     private void OnMouseEnter()
     {
-        if (PawnManager.Instance.hasPawnBeenSelected == false && TurnManager.Instance.CurrentPhase == Phase.SelectionPhase)
+        if (PawnManager.Instance.hasPawnBeenSelected == false && !isPawnInGame && TurnManager.Instance.CurrentPhase == Phase.SelectionPhase)
         {
             childOutline.eraseRenderer = false;
             childOutline.color = 0;
@@ -26,7 +30,7 @@ public class PawnController : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        if (PawnManager.Instance.hasPawnBeenSelected == false && TurnManager.Instance.CurrentPhase == Phase.SelectionPhase)
+        if (PawnManager.Instance.hasPawnBeenSelected == false && !isNowSelected && !isPawnInGame && TurnManager.Instance.CurrentPhase == Phase.SelectionPhase)
         {
             SelectPawn();
             childOutline.color = 1;
@@ -35,7 +39,7 @@ public class PawnController : MonoBehaviour {
 
     private void OnMouseExit()
     {
-        if (PawnManager.Instance.hasPawnBeenSelected == false && TurnManager.Instance.CurrentPhase == Phase.SelectionPhase)
+        if (PawnManager.Instance.hasPawnBeenSelected == false && !isPawnInGame && TurnManager.Instance.CurrentPhase == Phase.SelectionPhase)
         {
             childOutline.eraseRenderer = true;
         }
@@ -46,11 +50,17 @@ public class PawnController : MonoBehaviour {
     public void SelectPawn()
     {
         PawnManager.Instance.hasPawnBeenSelected = true;
+        isNowSelected = true;
+        isPawnInGame = true;
         TurnManager.Instance.SwitchPhase();
     }
 
     public PawnController GetSelectedPawn(PawnController pawnToReturn) {
         return pawnToReturn;
+    }
+
+    public void PlacePawn(CellController cellToPlaceOn) {
+        transform.position = cellToPlaceOn.transform.position;
     }
 
     public void ResetPawnController()

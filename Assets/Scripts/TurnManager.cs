@@ -53,10 +53,29 @@ public class TurnManager : MonoBehaviour {
     }
 
     public void SwitchPhase() {
-        if (CurrentPhase == Phase.PlacingPhase)
-            CurrentPhase = Phase.SelectionPhase;
-        else if (CurrentPhase == Phase.SelectionPhase)
+        if (CurrentPhase == Phase.SelectionPhase)
+        {
+            foreach (CellController cell in CellManager.Instance.GeneralCells)
+            {
+                cell.ResetCellController();
+            }
+
             CurrentPhase = Phase.PlacingPhase;
+           
+        }
+        else if (CurrentPhase == Phase.PlacingPhase)
+        {
+            foreach (PawnController pawn in PawnManager.Instance.GeneralPawns)
+            {
+                pawn.ResetPawnController();
+            }
+            foreach (PawnController pawn in PawnManager.Instance.GeneralPawns)
+            {
+                pawn.ResetPawnController();
+            }
+
+            CurrentPhase = Phase.SelectionPhase;
+        }
     }
 
     public void SwitchPlayerTurn() {
