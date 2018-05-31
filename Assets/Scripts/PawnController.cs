@@ -5,6 +5,8 @@ using cakeslice;
 
 public class PawnController : MonoBehaviour {
 
+
+
     public bool isPawnInGame;
 
     public bool isNowSelected;

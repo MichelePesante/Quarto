@@ -1,0 +1,17 @@
+Circle1_Small1 = Rotonda_Piena_Bassa_Bianca;
+Circle1_Small2 = Rotonda_Piena_Bassa_Nera;
+Circle2_Small1 = Rotonda_Bucata_Bassa_Bianca;
+Circle2_Small2 = Rotonda_Bucata_Bassa_Nera;
+Circle1_Tall1  = Rotonda_Piena_Alta_Bianca;
+Circle1_Tall2  = Rotonda_Piena_Alta_Nera;
+Circle2_Tall1  = Rotonda_Bucata_Alta_Bianca;
+Circle2_Tall2  = Rotonda_Bucata_Alta_Nera;
+
+Quad1_Small1   = Quadrata_Piena_Bassa_Bianca;
+Quad1_Small2   = Quadrata_Piena_Bassa_Nera;
+Quad2_Small1   = Quadrata_Bucata_Bassa_Bianca;
+Quad2_Small2   = Quadrata_Bucata_Bassa_Nera;
+Quad1_Tall1    = Quadrata_Piena_Alta_Bianca;
+Quad1_Tall2    = Quadrata_Piena_Alta_Nera;
+Quad2_Tall1    = Quadrata_Bucata_Alta_Bianca;
+Quad2_Tall2    = Quadrata_Bucata_Alta_Nera;
