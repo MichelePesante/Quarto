@@ -8,7 +8,7 @@ public class PawnManager : MonoBehaviour {
 
     public bool hasPawnBeenSelected;
 
-    public PawnController[] pawnToAdd = new PawnController[16];
+    public PawnController[] pawnsToAdd = new PawnController[16];
 
     public PawnController[] PawnsInGame = new PawnController[16];
 
@@ -21,8 +21,8 @@ public class PawnManager : MonoBehaviour {
     }
 
     void Start () {
-        for (int i = 0; i < pawnToAdd.Length; i++) {
-            pawnToAdd[i] = FindObjectsOfType<PawnController>()[i];
+        for (int i = 0; i < pawnsToAdd.Length; i++) {
+            pawnsToAdd[i] = FindObjectsOfType<PawnController>()[i];
         }
 	}
 
@@ -94,6 +94,56 @@ public class PawnManager : MonoBehaviour {
         else if (pawnToAdd.PawnCoordinates == CellCoordinates.X3_Y3)
         {
         PawnsInGame[15] = pawnToAdd;
+        }
+    }
+
+    public void VictoryCheck(int firstVictoryIndex, int secondVictoryIndex, int thirdVictoryIndex, int fourthVictoryIndex, bool boolValue) {
+        if (PawnsInGame[firstVictoryIndex] && PawnsInGame[secondVictoryIndex] && PawnsInGame[thirdVictoryIndex] && PawnsInGame[fourthVictoryIndex])
+        {
+            if (PawnsInGame[firstVictoryIndex].isCircle == boolValue && PawnsInGame[secondVictoryIndex].isCircle == boolValue && PawnsInGame[thirdVictoryIndex].isCircle == boolValue && PawnsInGame[fourthVictoryIndex].isCircle == boolValue)
+            {
+                PawnsInGame[firstVictoryIndex].childParticleSystem.gameObject.SetActive(true);
+                PawnsInGame[secondVictoryIndex].childParticleSystem.gameObject.SetActive(true);
+                PawnsInGame[thirdVictoryIndex].childParticleSystem.gameObject.SetActive(true);
+                PawnsInGame[fourthVictoryIndex].childParticleSystem.gameObject.SetActive(true);
+                if (boolValue == true)
+                    print("Hai vinto, sono tutti rotondi!");
+                else
+                    print("Hai vinto, sono tutti quadrati!");
+            }
+            else if (PawnsInGame[firstVictoryIndex].isFilled == boolValue && PawnsInGame[secondVictoryIndex].isFilled == boolValue && PawnsInGame[thirdVictoryIndex].isFilled == boolValue && PawnsInGame[fourthVictoryIndex].isFilled == boolValue)
+            {
+                PawnsInGame[firstVictoryIndex].childParticleSystem.gameObject.SetActive(true);
+                PawnsInGame[secondVictoryIndex].childParticleSystem.gameObject.SetActive(true);
+                PawnsInGame[thirdVictoryIndex].childParticleSystem.gameObject.SetActive(true);
+                PawnsInGame[fourthVictoryIndex].childParticleSystem.gameObject.SetActive(true);
+                if (boolValue == true)
+                    print("Hai vinto, sono tutti pieni!");
+                else
+                    print("Hai vinto, sono tutti bucati!");
+            }
+            else if (PawnsInGame[firstVictoryIndex].isSmall == boolValue && PawnsInGame[secondVictoryIndex].isSmall == boolValue && PawnsInGame[thirdVictoryIndex].isSmall == boolValue && PawnsInGame[fourthVictoryIndex].isSmall == boolValue)
+            {
+                PawnsInGame[firstVictoryIndex].childParticleSystem.gameObject.SetActive(true);
+                PawnsInGame[secondVictoryIndex].childParticleSystem.gameObject.SetActive(true);
+                PawnsInGame[thirdVictoryIndex].childParticleSystem.gameObject.SetActive(true);
+                PawnsInGame[fourthVictoryIndex].childParticleSystem.gameObject.SetActive(true);
+                if (boolValue == true)
+                    print("Hai vinto, sono tutti bassi!");
+                else
+                    print("Hai vinto, sono tutti alti!");
+            }
+            else if (PawnsInGame[firstVictoryIndex].isWhite == boolValue && PawnsInGame[secondVictoryIndex].isWhite == boolValue && PawnsInGame[thirdVictoryIndex].isWhite == boolValue && PawnsInGame[fourthVictoryIndex].isWhite == boolValue)
+            {
+                PawnsInGame[firstVictoryIndex].childParticleSystem.gameObject.SetActive(true);
+                PawnsInGame[secondVictoryIndex].childParticleSystem.gameObject.SetActive(true);
+                PawnsInGame[thirdVictoryIndex].childParticleSystem.gameObject.SetActive(true);
+                PawnsInGame[fourthVictoryIndex].childParticleSystem.gameObject.SetActive(true);
+                if (boolValue == true)
+                    print("Hai vinto, sono tutti bianchi!");
+                else
+                    print("Hai vinto, sono tutti neri!");
+            }
         }
     }
 }

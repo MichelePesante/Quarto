@@ -35,14 +35,14 @@ public class CellController : MonoBehaviour {
         if (TurnManager.Instance.CurrentPhase == Phase.PlacingPhase && !isCellOccupied)
         {
             childOutline.eraseRenderer = true;
-            foreach (PawnController pawn in PawnManager.Instance.pawnToAdd)
+            TurnManager.Instance.SwitchPhase();
+            foreach (PawnController pawn in PawnManager.Instance.pawnsToAdd)
             {
                 if (pawn.isNowSelected) {
                     pawn.PlacePawn(this);
                     pawn.isNowSelected = false;
                 }
             }
-            TurnManager.Instance.SwitchPhase();
             isCellOccupied = true;
         }
     }

@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using cakeslice;
 
 public class PawnController : MonoBehaviour {
 
@@ -21,10 +20,14 @@ public class PawnController : MonoBehaviour {
 
     public bool isPawnVictory;
 
-    private Outline childOutline;
+    private ParticleSystem.MainModule childParticleSystemMainModule;
+
+    public ParticleSystem childParticleSystem;
 
 	void Start () {
-        childOutline = GetComponentInChildren<Outline>();
+        childParticleSystem = GetComponentInChildren<ParticleSystem>();
+        childParticleSystemMainModule = childParticleSystem.main;
+        childParticleSystem.gameObject.SetActive(false);
         Setup();
 	}
 	
@@ -36,8 +39,7 @@ public class PawnController : MonoBehaviour {
     {
         if (PawnManager.Instance.hasPawnBeenSelected == false && !isPawnInGame && TurnManager.Instance.CurrentPhase == Phase.SelectionPhase)
         {
-            childOutline.eraseRenderer = false;
-            childOutline.color = 0;
+            childParticleSystem.gameObject.SetActive(true);
         }
     }
 
@@ -46,7 +48,7 @@ public class PawnController : MonoBehaviour {
         if (PawnManager.Instance.hasPawnBeenSelected == false && !isNowSelected && !isPawnInGame && TurnManager.Instance.CurrentPhase == Phase.SelectionPhase)
         {
             SelectPawn();
-            childOutline.color = 1;
+            childParticleSystemMainModule.startColor = Color.green;
         }
     }
 
@@ -54,7 +56,7 @@ public class PawnController : MonoBehaviour {
     {
         if (PawnManager.Instance.hasPawnBeenSelected == false && !isPawnInGame && TurnManager.Instance.CurrentPhase == Phase.SelectionPhase)
         {
-            childOutline.eraseRenderer = true;
+            childParticleSystem.gameObject.SetActive(false);
         }
     }
 
@@ -83,12 +85,31 @@ public class PawnController : MonoBehaviour {
         transform.position = cellToPlaceOn.transform.position;
         PawnCoordinates = cellToPlaceOn.cellCoordinate;
         PawnManager.Instance.FillOrganizedArray(this);
+        PawnManager.Instance.VictoryCheck(0, 1, 2, 3, true);
+        PawnManager.Instance.VictoryCheck(0, 1, 2, 3, false);
+        PawnManager.Instance.VictoryCheck(0, 4, 8, 12, true);
+        PawnManager.Instance.VictoryCheck(0, 4, 8, 12, false);
+        PawnManager.Instance.VictoryCheck(0, 5, 10, 15, true);
+        PawnManager.Instance.VictoryCheck(0, 5, 10, 15, false);
+        PawnManager.Instance.VictoryCheck(1, 5, 9, 13, true);
+        PawnManager.Instance.VictoryCheck(1, 5, 9, 13, false);
+        PawnManager.Instance.VictoryCheck(2, 6, 10, 14, true);
+        PawnManager.Instance.VictoryCheck(2, 6, 10, 14, false);
+        PawnManager.Instance.VictoryCheck(3, 6, 9, 12, true);
+        PawnManager.Instance.VictoryCheck(3, 6, 9, 12, false);
+        PawnManager.Instance.VictoryCheck(3, 7, 11, 15, true);
+        PawnManager.Instance.VictoryCheck(3, 7, 11, 15, false);
+        PawnManager.Instance.VictoryCheck(4, 5, 6, 7, true);
+        PawnManager.Instance.VictoryCheck(4, 5, 6, 7, false);
+        PawnManager.Instance.VictoryCheck(8, 9, 10, 11, true);
+        PawnManager.Instance.VictoryCheck(8, 9, 10, 11, false);
+        PawnManager.Instance.VictoryCheck(12, 13, 14, 15, true);
+        PawnManager.Instance.VictoryCheck(12, 13, 14, 15, false);
     }
 
     public void ResetPawnController()
     {
-        childOutline.eraseRenderer = true;
-        childOutline.color = 0;
+        childParticleSystem.gameObject.SetActive(false);
         PawnManager.Instance.hasPawnBeenSelected = false;
     }
 
