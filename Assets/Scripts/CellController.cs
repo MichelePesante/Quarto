@@ -35,7 +35,7 @@ public class CellController : MonoBehaviour {
         if (TurnManager.Instance.CurrentPhase == Phase.PlacingPhase && !isCellOccupied)
         {
             childOutline.eraseRenderer = true;
-            foreach (PawnController pawn in PawnManager.Instance.GeneralPawns)
+            foreach (PawnController pawn in PawnManager.Instance.pawnToAdd)
             {
                 if (pawn.isNowSelected) {
                     pawn.PlacePawn(this);

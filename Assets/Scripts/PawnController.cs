@@ -82,6 +82,7 @@ public class PawnController : MonoBehaviour {
     public void PlacePawn(CellController cellToPlaceOn) {
         transform.position = cellToPlaceOn.transform.position;
         PawnCoordinates = cellToPlaceOn.cellCoordinate;
+        PawnManager.Instance.FillOrganizedArray(this);
     }
 
     public void ResetPawnController()

@@ -65,11 +65,11 @@ public class TurnManager : MonoBehaviour {
         }
         else if (CurrentPhase == Phase.PlacingPhase)
         {
-            foreach (PawnController pawn in PawnManager.Instance.GeneralPawns)
+            foreach (PawnController pawn in PawnManager.Instance.pawnToAdd)
             {
                 pawn.ResetPawnController();
             }
-            foreach (PawnController pawn in PawnManager.Instance.GeneralPawns)
+            foreach (PawnController pawn in PawnManager.Instance.pawnToAdd)
             {
                 pawn.ResetPawnController();
             }
