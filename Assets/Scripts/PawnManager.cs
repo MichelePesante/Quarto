@@ -6,12 +6,11 @@ public class PawnManager : MonoBehaviour {
 
     public static PawnManager Instance;
 
-    public delegate void OnPawnSelection();
-    public delegate void OnPawnPlace();
-
     public bool hasPawnBeenSelected;
 
     public PawnController[] GeneralPawns = new PawnController[16];
+
+    public PawnController[] PawnsInGame = new PawnController[16];
 
     void Awake()
     {
