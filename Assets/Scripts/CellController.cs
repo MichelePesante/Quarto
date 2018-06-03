@@ -23,27 +23,34 @@ public class CellController : MonoBehaviour {
 
     private void OnMouseEnter()
     {
-        if (TurnManager.Instance.CurrentPhase == Phase.PlacingPhase && !isCellOccupied)
+        if (GameManager.isGamePaused == false)
         {
-            childOutline.eraseRenderer = false;
-            childOutline.color = 1;
+            if (TurnManager.Instance.CurrentPhase == Phase.PlacingPhase && !isCellOccupied)
+            {
+                childOutline.eraseRenderer = false;
+                childOutline.color = 1;
+            }
         }
     }
 
     private void OnMouseDown()
     {
-        if (TurnManager.Instance.CurrentPhase == Phase.PlacingPhase && !isCellOccupied)
+        if (GameManager.isGamePaused == false)
         {
-            childOutline.eraseRenderer = true;
-            TurnManager.Instance.SwitchPhase();
-            foreach (PawnController pawn in PawnManager.Instance.pawnsToAdd)
+            if (TurnManager.Instance.CurrentPhase == Phase.PlacingPhase && !isCellOccupied)
             {
-                if (pawn.isNowSelected) {
-                    pawn.PlacePawn(this);
-                    pawn.isNowSelected = false;
+                childOutline.eraseRenderer = true;
+                TurnManager.Instance.SwitchPhase();
+                foreach (PawnController pawn in PawnManager.Instance.pawnsToAdd)
+                {
+                    if (pawn.isNowSelected)
+                    {
+                        pawn.PlacePawn(this);
+                        pawn.isNowSelected = false;
+                    }
                 }
+                isCellOccupied = true;
             }
-            isCellOccupied = true;
         }
     }
 

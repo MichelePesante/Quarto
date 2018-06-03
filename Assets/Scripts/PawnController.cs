@@ -37,18 +37,24 @@ public class PawnController : MonoBehaviour {
 
     private void OnMouseEnter()
     {
-        if (PawnManager.Instance.hasPawnBeenSelected == false && !isPawnInGame && TurnManager.Instance.CurrentPhase == Phase.SelectionPhase)
+        if (GameManager.isGamePaused == false)
         {
-            childParticleSystem.gameObject.SetActive(true);
+            if (PawnManager.Instance.hasPawnBeenSelected == false && !isPawnInGame && TurnManager.Instance.CurrentPhase == Phase.SelectionPhase)
+            {
+                childParticleSystem.gameObject.SetActive(true);
+            }
         }
     }
 
     private void OnMouseDown()
     {
-        if (PawnManager.Instance.hasPawnBeenSelected == false && !isNowSelected && !isPawnInGame && TurnManager.Instance.CurrentPhase == Phase.SelectionPhase)
+        if (GameManager.isGamePaused == false)
         {
-            SelectPawn();
-            childParticleSystemMainModule.startColor = Color.green;
+            if (PawnManager.Instance.hasPawnBeenSelected == false && !isNowSelected && !isPawnInGame && TurnManager.Instance.CurrentPhase == Phase.SelectionPhase)
+            {
+                SelectPawn();
+                childParticleSystemMainModule.startColor = Color.green;
+            }
         }
     }
 
