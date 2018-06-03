@@ -70,6 +70,13 @@ public class TurnManager : MonoBehaviour {
                 pawn.ResetPawnController();
             }
 
+            foreach (CellController cell in CellManager.Instance.GeneralCells)
+            {
+                cell.ResetCellController();
+            }
+
+            CurrentPhase = Phase.PlacingPhase;
+
             CurrentPhase = Phase.SelectionPhase;
         }
     }

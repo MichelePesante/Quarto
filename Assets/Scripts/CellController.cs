@@ -1,20 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using cakeslice;
 
 public class CellController : MonoBehaviour {
 
     private bool isCellOccupied;
 
-    private Outline childOutline;
+    private Color StartingEmissionValue;
+    private Color HighlightedEmissionValue;
+
+    private Material childMaterial;
 
     [SerializeField]
     public CellCoordinates cellCoordinate;
 
     void Start()
     {
-        childOutline = GetComponentInChildren<Outline>();
+        childMaterial = GetComponentInChildren<Renderer>().material;
+        HighlightedEmissionValue = Color.white;
+        StartingEmissionValue = HighlightedEmissionValue * Mathf.LinearToGammaSpace(0f);
     }
 
     void Update () {
@@ -27,8 +31,7 @@ public class CellController : MonoBehaviour {
         {
             if (TurnManager.Instance.CurrentPhase == Phase.PlacingPhase && !isCellOccupied)
             {
-                childOutline.eraseRenderer = false;
-                childOutline.color = 1;
+                HighlightCell();
             }
         }
     }
@@ -39,7 +42,6 @@ public class CellController : MonoBehaviour {
         {
             if (TurnManager.Instance.CurrentPhase == Phase.PlacingPhase && !isCellOccupied)
             {
-                childOutline.eraseRenderer = true;
                 TurnManager.Instance.SwitchPhase();
                 foreach (PawnController pawn in PawnManager.Instance.pawnsToAdd)
                 {
@@ -58,13 +60,16 @@ public class CellController : MonoBehaviour {
     {
         if (TurnManager.Instance.CurrentPhase == Phase.PlacingPhase && !isCellOccupied)
         {
-            childOutline.eraseRenderer = true;
+            childMaterial.SetColor("_EmissionColor", StartingEmissionValue);
         }
     }
 
     public void ResetCellController ()
     {
-        childOutline.eraseRenderer = true;
-        childOutline.color = 0;
+        childMaterial.SetColor("_EmissionColor", StartingEmissionValue);
+    }
+
+    public void HighlightCell() {
+        childMaterial.SetColor("_EmissionColor", HighlightedEmissionValue);
     }
 }

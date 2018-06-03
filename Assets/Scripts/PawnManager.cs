@@ -102,6 +102,17 @@ public class PawnManager : MonoBehaviour {
         {
             if (PawnsInGame[firstVictoryIndex].isCircle == boolValue && PawnsInGame[secondVictoryIndex].isCircle == boolValue && PawnsInGame[thirdVictoryIndex].isCircle == boolValue && PawnsInGame[fourthVictoryIndex].isCircle == boolValue)
             {
+                foreach (CellController cell in CellManager.Instance.GeneralCells)
+                {
+                    if (cell.cellCoordinate == PawnsInGame[firstVictoryIndex].PawnCoordinates)
+                        cell.HighlightCell();
+                    else if (cell.cellCoordinate == PawnsInGame[secondVictoryIndex].PawnCoordinates)
+                        cell.HighlightCell();
+                    else if (cell.cellCoordinate == PawnsInGame[thirdVictoryIndex].PawnCoordinates)
+                        cell.HighlightCell();
+                    else if (cell.cellCoordinate == PawnsInGame[fourthVictoryIndex].PawnCoordinates)
+                        cell.HighlightCell();
+                }
                 PawnsInGame[firstVictoryIndex].childParticleSystem.gameObject.SetActive(true);
                 PawnsInGame[secondVictoryIndex].childParticleSystem.gameObject.SetActive(true);
                 PawnsInGame[thirdVictoryIndex].childParticleSystem.gameObject.SetActive(true);
@@ -114,6 +125,17 @@ public class PawnManager : MonoBehaviour {
             }
             else if (PawnsInGame[firstVictoryIndex].isFilled == boolValue && PawnsInGame[secondVictoryIndex].isFilled == boolValue && PawnsInGame[thirdVictoryIndex].isFilled == boolValue && PawnsInGame[fourthVictoryIndex].isFilled == boolValue)
             {
+                foreach (CellController cell in CellManager.Instance.GeneralCells)
+                {
+                    if (cell.cellCoordinate == PawnsInGame[firstVictoryIndex].PawnCoordinates)
+                        cell.HighlightCell();
+                    else if (cell.cellCoordinate == PawnsInGame[secondVictoryIndex].PawnCoordinates)
+                        cell.HighlightCell();
+                    else if (cell.cellCoordinate == PawnsInGame[thirdVictoryIndex].PawnCoordinates)
+                        cell.HighlightCell();
+                    else if (cell.cellCoordinate == PawnsInGame[fourthVictoryIndex].PawnCoordinates)
+                        cell.HighlightCell();
+                }
                 PawnsInGame[firstVictoryIndex].childParticleSystem.gameObject.SetActive(true);
                 PawnsInGame[secondVictoryIndex].childParticleSystem.gameObject.SetActive(true);
                 PawnsInGame[thirdVictoryIndex].childParticleSystem.gameObject.SetActive(true);
@@ -126,6 +148,17 @@ public class PawnManager : MonoBehaviour {
             }
             else if (PawnsInGame[firstVictoryIndex].isSmall == boolValue && PawnsInGame[secondVictoryIndex].isSmall == boolValue && PawnsInGame[thirdVictoryIndex].isSmall == boolValue && PawnsInGame[fourthVictoryIndex].isSmall == boolValue)
             {
+                foreach (CellController cell in CellManager.Instance.GeneralCells)
+                {
+                    if (cell.cellCoordinate == PawnsInGame[firstVictoryIndex].PawnCoordinates)
+                        cell.HighlightCell();
+                    else if (cell.cellCoordinate == PawnsInGame[secondVictoryIndex].PawnCoordinates)
+                        cell.HighlightCell();
+                    else if (cell.cellCoordinate == PawnsInGame[thirdVictoryIndex].PawnCoordinates)
+                        cell.HighlightCell();
+                    else if (cell.cellCoordinate == PawnsInGame[fourthVictoryIndex].PawnCoordinates)
+                        cell.HighlightCell();
+                }
                 PawnsInGame[firstVictoryIndex].childParticleSystem.gameObject.SetActive(true);
                 PawnsInGame[secondVictoryIndex].childParticleSystem.gameObject.SetActive(true);
                 PawnsInGame[thirdVictoryIndex].childParticleSystem.gameObject.SetActive(true);
@@ -138,6 +171,17 @@ public class PawnManager : MonoBehaviour {
             }
             else if (PawnsInGame[firstVictoryIndex].isWhite == boolValue && PawnsInGame[secondVictoryIndex].isWhite == boolValue && PawnsInGame[thirdVictoryIndex].isWhite == boolValue && PawnsInGame[fourthVictoryIndex].isWhite == boolValue)
             {
+                foreach (CellController cell in CellManager.Instance.GeneralCells)
+                {
+                    if (cell.cellCoordinate == PawnsInGame[firstVictoryIndex].PawnCoordinates)
+                        cell.HighlightCell();
+                    else if (cell.cellCoordinate == PawnsInGame[secondVictoryIndex].PawnCoordinates)
+                        cell.HighlightCell();
+                    else if (cell.cellCoordinate == PawnsInGame[thirdVictoryIndex].PawnCoordinates)
+                        cell.HighlightCell();
+                    else if (cell.cellCoordinate == PawnsInGame[fourthVictoryIndex].PawnCoordinates)
+                        cell.HighlightCell();
+                }
                 PawnsInGame[firstVictoryIndex].childParticleSystem.gameObject.SetActive(true);
                 PawnsInGame[secondVictoryIndex].childParticleSystem.gameObject.SetActive(true);
                 PawnsInGame[thirdVictoryIndex].childParticleSystem.gameObject.SetActive(true);
