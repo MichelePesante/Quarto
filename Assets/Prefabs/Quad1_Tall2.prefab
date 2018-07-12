@@ -84,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1227734344293624}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4676817120261710}
@@ -194,6 +194,7 @@ MonoBehaviour:
   isPawnInGame: 0
   isNowSelected: 0
   isPawnVictory: 0
+  childParticleSystem: {fileID: 0}
 --- !u!198 &198490309967648674
 ParticleSystem:
   m_ObjectHideFlags: 1
