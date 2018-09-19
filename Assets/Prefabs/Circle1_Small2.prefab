@@ -194,6 +194,8 @@ MonoBehaviour:
   isPawnInGame: 0
   isNowSelected: 0
   isPawnVictory: 0
+  PawnPreview_Sprite: {fileID: 21300000, guid: 04c76abffa8c3ad4784b7b7e7a9b2b0c, type: 3}
+  childParticleSystem: {fileID: 0}
 --- !u!198 &198258596806441086
 ParticleSystem:
   m_ObjectHideFlags: 1

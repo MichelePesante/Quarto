@@ -92,7 +92,8 @@ public enum PlayerTurn
     SecondPlayerTurn
 }
 
-public enum Phase {
+public enum Phase
+{
     SelectionPhase,
     PlacingPhase
 }

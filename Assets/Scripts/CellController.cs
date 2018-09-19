@@ -49,6 +49,7 @@ public class CellController : MonoBehaviour {
                     {
                         pawn.PlacePawn(this);
                         pawn.isNowSelected = false;
+                        pawn.ResetPawnPreview();
                     }
                 }
                 isCellOccupied = true;

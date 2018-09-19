@@ -20,6 +20,8 @@ public class PawnController : MonoBehaviour {
 
     public bool isPawnVictory;
 
+    public Sprite PawnPreview_Sprite;
+
     private ParticleSystem.MainModule childParticleSystemMainModule;
 
     public ParticleSystem childParticleSystem;
@@ -42,6 +44,7 @@ public class PawnController : MonoBehaviour {
             if (PawnManager.Instance.hasPawnBeenSelected == false && !isPawnInGame && TurnManager.Instance.CurrentPhase == Phase.SelectionPhase)
             {
                 childParticleSystem.gameObject.SetActive(true);
+                PawnPreview();
             }
         }
     }
@@ -63,6 +66,7 @@ public class PawnController : MonoBehaviour {
         if (PawnManager.Instance.hasPawnBeenSelected == false && !isPawnInGame && TurnManager.Instance.CurrentPhase == Phase.SelectionPhase)
         {
             childParticleSystem.gameObject.SetActive(false);
+            ResetPawnPreview();
         }
     }
 
@@ -117,6 +121,17 @@ public class PawnController : MonoBehaviour {
     {
         childParticleSystem.gameObject.SetActive(false);
         PawnManager.Instance.hasPawnBeenSelected = false;
+    }
+
+    public void PawnPreview()
+    {
+        UIManager.Instance.Pawn_Preview_P1.sprite = PawnPreview_Sprite;
+        UIManager.Instance.Pawn_Preview_P1.color = new Color (1f, 1f, 1f, 1f);
+    }
+
+    public void ResetPawnPreview()
+    {
+        UIManager.Instance.Pawn_Preview_P1.color = new Color(0f, 0f, 0f, 0f);
     }
 
     #endregion

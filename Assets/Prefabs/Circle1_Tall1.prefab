@@ -194,6 +194,8 @@ MonoBehaviour:
   isPawnInGame: 0
   isNowSelected: 0
   isPawnVictory: 0
+  PawnPreview_Sprite: {fileID: 0}
+  childParticleSystem: {fileID: 0}
 --- !u!198 &198547440510185604
 ParticleSystem:
   m_ObjectHideFlags: 1
