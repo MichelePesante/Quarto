@@ -57,6 +57,8 @@ public class PawnController : MonoBehaviour {
             {
                 SelectPawn();
                 childParticleSystemMainModule.startColor = Color.green;
+                SwapPawnPreview();
+                TurnManager.Instance.SwitchPlayerTurn();
             }
         }
     }
@@ -125,13 +127,38 @@ public class PawnController : MonoBehaviour {
 
     public void PawnPreview()
     {
-        UIManager.Instance.Pawn_Preview_P1.sprite = PawnPreview_Sprite;
-        UIManager.Instance.Pawn_Preview_P1.color = new Color (1f, 1f, 1f, 1f);
+        if (TurnManager.Instance.CurrentPlayerTurn == PlayerTurn.FirstPlayerTurn)
+        {
+            UIManager.Instance.Pawn_Preview_P1.sprite = PawnPreview_Sprite;
+            UIManager.Instance.Pawn_Preview_P1.color = new Color(1f, 1f, 1f, 1f);
+        }
+        else
+        {
+            UIManager.Instance.Pawn_Preview_P2.sprite = PawnPreview_Sprite;
+            UIManager.Instance.Pawn_Preview_P2.color = new Color(1f, 1f, 1f, 1f);
+        }
     }
 
     public void ResetPawnPreview()
     {
-        UIManager.Instance.Pawn_Preview_P1.color = new Color(0f, 0f, 0f, 0f);
+        UIManager.Instance.Pawn_Preview_P2.color = new Color(1f, 1f, 1f, 0f);
+        UIManager.Instance.Pawn_Preview_P1.color = new Color(1f, 1f, 1f, 0f);
+    }
+
+    public void SwapPawnPreview()
+    {
+        if (TurnManager.Instance.CurrentPlayerTurn == PlayerTurn.FirstPlayerTurn)
+        {
+            UIManager.Instance.Pawn_Preview_P2.sprite = UIManager.Instance.Pawn_Preview_P1.sprite;
+            UIManager.Instance.Pawn_Preview_P2.color = UIManager.Instance.Pawn_Preview_P1.color;
+            UIManager.Instance.Pawn_Preview_P1.color = new Color(1f, 1f, 1f, 0f);
+        }
+        else
+        {
+            UIManager.Instance.Pawn_Preview_P1.sprite = UIManager.Instance.Pawn_Preview_P2.sprite;
+            UIManager.Instance.Pawn_Preview_P1.color = UIManager.Instance.Pawn_Preview_P2.color;
+            UIManager.Instance.Pawn_Preview_P2.color = new Color(1f, 1f, 1f, 0f);
+        }
     }
 
     #endregion

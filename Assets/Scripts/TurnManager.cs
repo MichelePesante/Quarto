@@ -81,8 +81,16 @@ public class TurnManager : MonoBehaviour {
         }
     }
 
-    public void SwitchPlayerTurn() {
-
+    public void SwitchPlayerTurn()
+    {
+        if (CurrentPlayerTurn == PlayerTurn.FirstPlayerTurn)
+        {
+            CurrentPlayerTurn = PlayerTurn.SecondPlayerTurn;
+        }
+        else
+        {
+            CurrentPlayerTurn = PlayerTurn.FirstPlayerTurn;
+        }
     }
 }
 
