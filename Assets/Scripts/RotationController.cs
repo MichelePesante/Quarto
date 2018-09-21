@@ -31,7 +31,7 @@ public class RotationController : MonoBehaviour {
     {
         if (rightclicked == true)
         {
-            x += Input.GetAxis("Mouse X") * xSpeed * distance * 0.02f;
+            x += Input.GetAxis("Mouse X") * -xSpeed * distance * 0.02f;
             Quaternion rotation = Quaternion.Euler(0, x, 0);
             transform.rotation = rotation;
         }

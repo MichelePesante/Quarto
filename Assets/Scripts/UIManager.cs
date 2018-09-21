@@ -11,6 +11,9 @@ public class UIManager : MonoBehaviour {
     public Image Pawn_Preview_P1;
     public Image Pawn_Preview_P2;
 
+    public Transform T_Pawn_Preview_P1;
+    public Transform T_Pawn_Preview_P2;
+
     private TextMeshProUGUI Victory_Text;
 
     private void Awake()

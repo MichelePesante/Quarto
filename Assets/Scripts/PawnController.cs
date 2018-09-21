@@ -22,6 +22,8 @@ public class PawnController : MonoBehaviour {
 
     public Sprite PawnPreview_Sprite;
 
+    public GameObject PawnPreview_3D;
+
     private ParticleSystem.MainModule childParticleSystemMainModule;
 
     public ParticleSystem childParticleSystem;
@@ -44,7 +46,8 @@ public class PawnController : MonoBehaviour {
             if (PawnManager.Instance.hasPawnBeenSelected == false && !isPawnInGame && TurnManager.Instance.CurrentPhase == Phase.SelectionPhase)
             {
                 childParticleSystem.gameObject.SetActive(true);
-                PawnPreview();
+                //PawnPreview();
+                T_PawnPreview();
             }
         }
     }
@@ -57,7 +60,8 @@ public class PawnController : MonoBehaviour {
             {
                 SelectPawn();
                 childParticleSystemMainModule.startColor = Color.green;
-                SwapPawnPreview();
+                //SwapPawnPreview();
+                Swap_T_PawnPreview();
                 TurnManager.Instance.SwitchPlayerTurn();
             }
         }
@@ -68,7 +72,8 @@ public class PawnController : MonoBehaviour {
         if (PawnManager.Instance.hasPawnBeenSelected == false && !isPawnInGame && TurnManager.Instance.CurrentPhase == Phase.SelectionPhase)
         {
             childParticleSystem.gameObject.SetActive(false);
-            ResetPawnPreview();
+            //ResetPawnPreview();
+            Reset_T_PawnPreview();
         }
     }
 
@@ -158,6 +163,40 @@ public class PawnController : MonoBehaviour {
             UIManager.Instance.Pawn_Preview_P1.sprite = UIManager.Instance.Pawn_Preview_P2.sprite;
             UIManager.Instance.Pawn_Preview_P1.color = UIManager.Instance.Pawn_Preview_P2.color;
             UIManager.Instance.Pawn_Preview_P2.color = new Color(1f, 1f, 1f, 0f);
+        }
+    }
+
+    public void T_PawnPreview()
+    {
+        if (TurnManager.Instance.CurrentPlayerTurn == PlayerTurn.FirstPlayerTurn)
+        {
+            PawnPreview_3D.transform.position = UIManager.Instance.T_Pawn_Preview_P1.position;
+            PawnPreview_3D.transform.rotation = UIManager.Instance.T_Pawn_Preview_P1.rotation;
+        }
+        else
+        {
+            PawnPreview_3D.transform.position = UIManager.Instance.T_Pawn_Preview_P2.position;
+            PawnPreview_3D.transform.rotation = UIManager.Instance.T_Pawn_Preview_P2.rotation;
+        }
+    }
+
+    public void Reset_T_PawnPreview()
+    {
+        PawnPreview_3D.transform.localPosition = Vector3.zero;
+        PawnPreview_3D.transform.localRotation = new Quaternion(0f, 0f, 0f, 0f);
+    }
+
+    public void Swap_T_PawnPreview()
+    {
+        if (TurnManager.Instance.CurrentPlayerTurn == PlayerTurn.FirstPlayerTurn)
+        {
+            PawnPreview_3D.transform.position = UIManager.Instance.T_Pawn_Preview_P2.position;
+            PawnPreview_3D.transform.rotation = UIManager.Instance.T_Pawn_Preview_P2.rotation;
+        }
+        else
+        {
+            PawnPreview_3D.transform.position = UIManager.Instance.T_Pawn_Preview_P1.position;
+            PawnPreview_3D.transform.rotation = UIManager.Instance.T_Pawn_Preview_P1.rotation;
         }
     }
 
