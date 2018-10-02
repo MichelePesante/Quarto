@@ -132,7 +132,7 @@ public class PawnController : MonoBehaviour {
 
     public void PawnPreview()
     {
-        if (TurnManager.Instance.CurrentPlayerTurn == PlayerTurn.FirstPlayerTurn)
+        if (TurnManager.Instance.CurrentPlayerTurn == PlayerTurn.PlayerOne)
         {
             UIManager.Instance.Pawn_Preview_P1.sprite = PawnPreview_Sprite;
             UIManager.Instance.Pawn_Preview_P1.color = new Color(1f, 1f, 1f, 1f);
@@ -152,7 +152,7 @@ public class PawnController : MonoBehaviour {
 
     public void SwapPawnPreview()
     {
-        if (TurnManager.Instance.CurrentPlayerTurn == PlayerTurn.FirstPlayerTurn)
+        if (TurnManager.Instance.CurrentPlayerTurn == PlayerTurn.PlayerOne)
         {
             UIManager.Instance.Pawn_Preview_P2.sprite = UIManager.Instance.Pawn_Preview_P1.sprite;
             UIManager.Instance.Pawn_Preview_P2.color = UIManager.Instance.Pawn_Preview_P1.color;
@@ -168,15 +168,15 @@ public class PawnController : MonoBehaviour {
 
     public void T_PawnPreview()
     {
-        if (TurnManager.Instance.CurrentPlayerTurn == PlayerTurn.FirstPlayerTurn)
-        {
-            PawnPreview_3D.transform.position = UIManager.Instance.T_Pawn_Preview_P1.position;
-            PawnPreview_3D.transform.rotation = UIManager.Instance.T_Pawn_Preview_P1.rotation;
-        }
-        else
+        if (TurnManager.Instance.CurrentPlayerTurn == PlayerTurn.PlayerOne)
         {
             PawnPreview_3D.transform.position = UIManager.Instance.T_Pawn_Preview_P2.position;
             PawnPreview_3D.transform.rotation = UIManager.Instance.T_Pawn_Preview_P2.rotation;
+        }
+        else
+        {
+            PawnPreview_3D.transform.position = UIManager.Instance.T_Pawn_Preview_P1.position;
+            PawnPreview_3D.transform.rotation = UIManager.Instance.T_Pawn_Preview_P1.rotation;
         }
     }
 
@@ -188,15 +188,15 @@ public class PawnController : MonoBehaviour {
 
     public void Swap_T_PawnPreview()
     {
-        if (TurnManager.Instance.CurrentPlayerTurn == PlayerTurn.FirstPlayerTurn)
-        {
-            PawnPreview_3D.transform.position = UIManager.Instance.T_Pawn_Preview_P2.position;
-            PawnPreview_3D.transform.rotation = UIManager.Instance.T_Pawn_Preview_P2.rotation;
-        }
-        else
+        if (TurnManager.Instance.CurrentPlayerTurn == PlayerTurn.PlayerOne)
         {
             PawnPreview_3D.transform.position = UIManager.Instance.T_Pawn_Preview_P1.position;
             PawnPreview_3D.transform.rotation = UIManager.Instance.T_Pawn_Preview_P1.rotation;
+        }
+        else
+        {
+            PawnPreview_3D.transform.position = UIManager.Instance.T_Pawn_Preview_P2.position;
+            PawnPreview_3D.transform.rotation = UIManager.Instance.T_Pawn_Preview_P2.rotation;
         }
     }
 

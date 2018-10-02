@@ -118,9 +118,9 @@ public class PawnManager : MonoBehaviour {
                 PawnsInGame[thirdVictoryIndex].childParticleSystem.gameObject.SetActive(true);
                 PawnsInGame[fourthVictoryIndex].childParticleSystem.gameObject.SetActive(true);
                 if (boolValue == true)
-                    UIManager.Instance.SetAndShowVictoryText("Hai vinto, sono tutti rotondi!");
+                    UIManager.Instance.SetAndShowVictoryText("Hai vinto " + TurnManager.Instance.CurrentPlayerTurn + ", sono tutti rotondi!");
                 else
-                    UIManager.Instance.SetAndShowVictoryText("Hai vinto, sono tutti quadrati!");
+                    UIManager.Instance.SetAndShowVictoryText("Hai vinto " + TurnManager.Instance.CurrentPlayerTurn + ", sono tutti quadrati!");
                 GameManager.isGamePaused = true;
             }
             else if (PawnsInGame[firstVictoryIndex].isFilled == boolValue && PawnsInGame[secondVictoryIndex].isFilled == boolValue && PawnsInGame[thirdVictoryIndex].isFilled == boolValue && PawnsInGame[fourthVictoryIndex].isFilled == boolValue)
@@ -141,9 +141,9 @@ public class PawnManager : MonoBehaviour {
                 PawnsInGame[thirdVictoryIndex].childParticleSystem.gameObject.SetActive(true);
                 PawnsInGame[fourthVictoryIndex].childParticleSystem.gameObject.SetActive(true);
                 if (boolValue == true)
-                    UIManager.Instance.SetAndShowVictoryText("Hai vinto, sono tutti pieni!");
+                    UIManager.Instance.SetAndShowVictoryText("Hai vinto " + TurnManager.Instance.CurrentPlayerTurn + ", sono tutti pieni!");
                 else
-                    UIManager.Instance.SetAndShowVictoryText("Hai vinto, sono tutti bucati!");
+                    UIManager.Instance.SetAndShowVictoryText("Hai vinto " + TurnManager.Instance.CurrentPlayerTurn + ", sono tutti bucati!");
                 GameManager.isGamePaused = true;
             }
             else if (PawnsInGame[firstVictoryIndex].isSmall == boolValue && PawnsInGame[secondVictoryIndex].isSmall == boolValue && PawnsInGame[thirdVictoryIndex].isSmall == boolValue && PawnsInGame[fourthVictoryIndex].isSmall == boolValue)
@@ -164,9 +164,9 @@ public class PawnManager : MonoBehaviour {
                 PawnsInGame[thirdVictoryIndex].childParticleSystem.gameObject.SetActive(true);
                 PawnsInGame[fourthVictoryIndex].childParticleSystem.gameObject.SetActive(true);
                 if (boolValue == true)
-                    UIManager.Instance.SetAndShowVictoryText("Hai vinto, sono tutti bassi!");
+                    UIManager.Instance.SetAndShowVictoryText("Hai vinto " + TurnManager.Instance.CurrentPlayerTurn + ", sono tutti bassi!");
                 else
-                    UIManager.Instance.SetAndShowVictoryText("Hai vinto, sono tutti alti!");
+                    UIManager.Instance.SetAndShowVictoryText("Hai vinto " + TurnManager.Instance.CurrentPlayerTurn + ", sono tutti alti!");
                 GameManager.isGamePaused = true;
             }
             else if (PawnsInGame[firstVictoryIndex].isWhite == boolValue && PawnsInGame[secondVictoryIndex].isWhite == boolValue && PawnsInGame[thirdVictoryIndex].isWhite == boolValue && PawnsInGame[fourthVictoryIndex].isWhite == boolValue)
@@ -187,9 +187,9 @@ public class PawnManager : MonoBehaviour {
                 PawnsInGame[thirdVictoryIndex].childParticleSystem.gameObject.SetActive(true);
                 PawnsInGame[fourthVictoryIndex].childParticleSystem.gameObject.SetActive(true);
                 if (boolValue == true)
-                    UIManager.Instance.SetAndShowVictoryText("Hai vinto, sono tutti bianchi!");
+                    UIManager.Instance.SetAndShowVictoryText("Hai vinto " + TurnManager.Instance.CurrentPlayerTurn + ", sono tutti bianchi!");
                 else
-                    UIManager.Instance.SetAndShowVictoryText("Hai vinto, sono tutti neri!");
+                    UIManager.Instance.SetAndShowVictoryText("Hai vinto " + TurnManager.Instance.CurrentPlayerTurn + ", sono tutti neri!");
                 GameManager.isGamePaused = true;
             }
         }

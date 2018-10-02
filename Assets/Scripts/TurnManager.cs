@@ -24,16 +24,16 @@ public class TurnManager : MonoBehaviour {
 
     void Start()
     {
-        CurrentPlayerTurn = PlayerTurn.FirstPlayerTurn;
+        CurrentPlayerTurn = PlayerTurn.PlayerOne;
         CurrentPhase = Phase.SelectionPhase;
     }
 
     public void OnPlayerTurnStart(PlayerTurn _currentPlayerTurn) {
         switch (_currentPlayerTurn)
         {
-            case PlayerTurn.FirstPlayerTurn:
+            case PlayerTurn.PlayerOne:
                 break;
-            case PlayerTurn.SecondPlayerTurn:
+            case PlayerTurn.PlayerTwo:
                 break;
             default:
                 break;
@@ -83,21 +83,21 @@ public class TurnManager : MonoBehaviour {
 
     public void SwitchPlayerTurn()
     {
-        if (CurrentPlayerTurn == PlayerTurn.FirstPlayerTurn)
+        if (CurrentPlayerTurn == PlayerTurn.PlayerOne)
         {
-            CurrentPlayerTurn = PlayerTurn.SecondPlayerTurn;
+            CurrentPlayerTurn = PlayerTurn.PlayerTwo;
         }
         else
         {
-            CurrentPlayerTurn = PlayerTurn.FirstPlayerTurn;
+            CurrentPlayerTurn = PlayerTurn.PlayerOne;
         }
     }
 }
 
 public enum PlayerTurn
 {
-    FirstPlayerTurn,
-    SecondPlayerTurn
+    PlayerOne,
+    PlayerTwo
 }
 
 public enum Phase
